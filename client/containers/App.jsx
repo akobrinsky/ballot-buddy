@@ -5,14 +5,17 @@ import Header from './Header';
 import Results from './Results';
 import Profile from './Profile';
 import Search from './Search';
+import history from "../history";
 
 
 const App = props => {
   const [isLoggedIn, setIsLoggedIn] = useState('false');
   const [address, setAddress] = useState('');
+  
 
   const onAddressSubmit = (addressObj) => {
-    return setAddress(addressObj);
+    setAddress(addressObj);
+    history.push('/results')
   }
   const API_KEY = 'AIzaSyBHAs4K-WNgIbaFgjYvFML5zc8KQZ5Sgy8';
   // TO-DO: we'll need some logic, probably in useEffect, to detect login and set state appropriately
